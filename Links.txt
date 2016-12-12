@@ -1,1 +1,4 @@
 https://auth0.com/docs/tutorials/generate-jwt-dotnet
+
+Entity Framework Core Migrations for Class Library Projects 
+http://benjii.me/2016/06/entity-framework-core-migrations-for-class-library-projects/
