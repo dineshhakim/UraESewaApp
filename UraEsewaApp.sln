@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{065C2DA6-E95B-4877-8EA6-7188A986FDB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B9E8A39-A5D1-4250-AB28-5072232FC62E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UraEsewaApp.Tests", "UraEsewaApp.Tests\UraEsewaApp.Tests.csproj", "{6BFF8C92-03EB-4CA5-A752-3BBE16E76751}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UraEsewaApp.API", "src\UraEsewaApp.API\UraEsewaApp.API.xproj", "{0FD01569-FFA8-414D-BEB7-1B718C232645}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UraEsewaApp.Models", "src\UraEsewaApp.Models\UraEsewaApp.Models.xproj", "{178A2B6A-6B8C-49E6-A198-2FE48DB8BEEB}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UraEsewaApp.Services", "src\UraEsewaApp.Services\UraEsewaApp.Services.xproj", "{DBDCEF1F-2C9D-416F-86FA-491FAAC2FF8E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UraEsewaApp.Repository", "src\UraEsewaApp.Repository\UraEsewaApp.Repository.xproj", "{1D607B34-E235-4F92-BEFC-AE149621639A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BFF8C92-03EB-4CA5-A752-3BBE16E76751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BFF8C92-03EB-4CA5-A752-3BBE16E76751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BFF8C92-03EB-4CA5-A752-3BBE16E76751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BFF8C92-03EB-4CA5-A752-3BBE16E76751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FD01569-FFA8-414D-BEB7-1B718C232645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FD01569-FFA8-414D-BEB7-1B718C232645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FD01569-FFA8-414D-BEB7-1B718C232645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FD01569-FFA8-414D-BEB7-1B718C232645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{178A2B6A-6B8C-49E6-A198-2FE48DB8BEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178A2B6A-6B8C-49E6-A198-2FE48DB8BEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{178A2B6A-6B8C-49E6-A198-2FE48DB8BEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178A2B6A-6B8C-49E6-A198-2FE48DB8BEEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBDCEF1F-2C9D-416F-86FA-491FAAC2FF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBDCEF1F-2C9D-416F-86FA-491FAAC2FF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBDCEF1F-2C9D-416F-86FA-491FAAC2FF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBDCEF1F-2C9D-416F-86FA-491FAAC2FF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D607B34-E235-4F92-BEFC-AE149621639A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D607B34-E235-4F92-BEFC-AE149621639A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D607B34-E235-4F92-BEFC-AE149621639A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D607B34-E235-4F92-BEFC-AE149621639A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BFF8C92-03EB-4CA5-A752-3BBE16E76751} = {065C2DA6-E95B-4877-8EA6-7188A986FDB4}
+		{0FD01569-FFA8-414D-BEB7-1B718C232645} = {065C2DA6-E95B-4877-8EA6-7188A986FDB4}
+		{178A2B6A-6B8C-49E6-A198-2FE48DB8BEEB} = {065C2DA6-E95B-4877-8EA6-7188A986FDB4}
+		{DBDCEF1F-2C9D-416F-86FA-491FAAC2FF8E} = {065C2DA6-E95B-4877-8EA6-7188A986FDB4}
+		{1D607B34-E235-4F92-BEFC-AE149621639A} = {065C2DA6-E95B-4877-8EA6-7188A986FDB4}
+	EndGlobalSection
+EndGlobal
