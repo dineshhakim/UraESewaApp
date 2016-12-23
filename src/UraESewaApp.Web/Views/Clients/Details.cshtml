@@ -1,0 +1,72 @@
+@model UraEsewaApp.Models.Client
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientGLCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientGLCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPersonName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContactPersonName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmaildId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmaildId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OutstandingBalance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OutstandingBalance)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
