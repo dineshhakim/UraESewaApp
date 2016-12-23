@@ -8,20 +8,30 @@ namespace UraEsewaApp.Repository.Infrastructure
 {
     public class DatabaseContext : DbContext
     {
+        private DbContextOptionsBuilder<DatabaseContext> builder;
+
         public DatabaseContext()
         {
 
         }
 
+        public DatabaseContext(DbContextOptionsBuilder<DatabaseContext> builder)
+        {
+            this.builder = builder;
+        }
+
         public IConfigurationRoot Configuration { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
+            
             var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
              .AddJsonFile("appsettings.json");
             Configuration = configuration.Build();
             options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]);
+         
           
         }
+         
         public DbSet<Client> Clients { get; set; }
         public DbSet<User> Users { get; set; }        
         public DbSet<RoleType> RoleTypes { get; set; }

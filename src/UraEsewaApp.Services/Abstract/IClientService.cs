@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UraEsewaApp.Models;
 
 namespace UraEsewaApp.Services.Abstract
 {
-    public class IClientService
+    public interface IClientService : IServiceCommand<Client>
     {
     }
 }

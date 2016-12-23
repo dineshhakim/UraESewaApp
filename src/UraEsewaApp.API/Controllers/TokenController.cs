@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using UraEsewaApp.API.Helpers;
 using UraEsewaApp.Models.ViewModels;
+using UraEsewaApp.Services.Abstract;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,12 +16,18 @@ namespace UraEsewaApp.API.Controllers
     [Route("api/[controller]")]
     public class TokenController : Controller
     {
+        public IUserService _userService;
+        public TokenController(IUserService userService)
+        {
+            _userService = userService;
+        }
         // GET api/values
         [HttpGet]
         public string Get([FromBody]RequestBody request)
         {
             var tokenhelper = new JWTTokenHelper();
             var token = tokenhelper.CreateToken("Nesdo", "nepal", "Abc");
+            var users =_userService.GetAll();
             return token;
         }
         //   [Authorize(Policy = "AlwaysFail")]

@@ -1,16 +1,19 @@
 ﻿
 
 
+using Microsoft.EntityFrameworkCore;
 using UraEsewaApp.API.Repository.Infrastructure;
 
 namespace UraEsewaApp.Repository.Infrastructure
 {
-   public class DatabaseFactory: Disposable, IDatabaseFactory
+    public class DatabaseFactory : Disposable, IDatabaseFactory
     {
         private DatabaseContext dataContext;
         public DatabaseContext Get()
         {
-            return dataContext ?? (dataContext = new DatabaseContext());
+            dataContext = dataContext ?? (dataContext = new DatabaseContext());
+            dataContext.Database.EnsureCreated();
+            return dataContext;
         }
 
         protected override void DisposeCore()
@@ -19,5 +22,5 @@ namespace UraEsewaApp.Repository.Infrastructure
                 dataContext.Dispose();
         }
     }
-    
+
 }

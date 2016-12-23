@@ -16,17 +16,29 @@ using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using UraEsewaApp.Repository.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using UraEsewaApp.Services.Abstract;
+using UraEsewaApp.Models;
 
 namespace UraEsewaApp.API
 {
     public class Startup
     {
+        public IUserService _userService;
+        // public readonly ICompanyService CompanyService;
+
+
+        public Startup(IUserService objUserService)
+        {
+            _userService = objUserService;
+        }
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+            Configuration = builder.Build();
 
             if (env.IsEnvironment("Development"))
             {
@@ -60,12 +72,12 @@ namespace UraEsewaApp.API
                 config.Filters.Add(new AuthorizeFilter(policy));
             }
             );
-            var connection = @"Server=.;Database=UraESewaApp;Trusted_Connection=True;";
-            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
+            //var connection = @"Server=.;Database=UraESewaApp;Trusted_Connection=True;";
+            //services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IServiceProvider serviceProvider)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -74,7 +86,10 @@ namespace UraEsewaApp.API
 
             app.UseApplicationInsightsExceptionTelemetry();
 
-           
+            if (_userService == null)
+            {
+                _userService = serviceProvider.GetService<IUserService>();
+            }
             app.UseBasicAuthentication(new BasicAuthenticationOptions
             {
                 Realm = "UraEsewaApp",
@@ -83,7 +98,8 @@ namespace UraEsewaApp.API
                     OnValidateCredentials = context =>
                     {
                         //Need to override this condition need to check from database
-                        if (context.Username == context.Password)
+                        var user = new User { UserName = context.Username, Password = context.Password.ToString() }();
+                        if (_userService.CheckLogin(user))
                         {
                             var claims = new[]
                             {
